@@ -1,0 +1,16 @@
+{
+	"name": "fundcore",
+	"description": "FundCore — platform crowdfunding donasi",
+	"scripts": {
+		"dokku": {
+			"predeploy": "node scripts/seed.js",
+			"release": "echo 'migrasi/postgres di sini bila memakai Postgres (lihat db/postgres.sql)'"
+		}
+	},
+	"formation": {
+		"web": { "quantity": 2 },
+		"worker-pay": { "quantity": 1 },
+		"worker-wa": { "quantity": 1 },
+		"worker-batch": { "quantity": 1 }
+	}
+}
